@@ -1,0 +1,12 @@
+# ninja log v5
+44	476	7640078629698100	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c19addc87ee3ec13
+478	878	7640078633243465	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4t0x2e5y/obj/arm64-v8a/libswappywrapper.so	df4c56c3ba10e849
+16	1672	7640078641639674	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f35a2fec10e7b18d
+31	1725	7640078642152203	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e5cd94d8aea3ac1f
+1	1731	7640078642222994	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	35711c4a9d42c743
+20	1778	7640078642732864	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ddb0f5d6e9564458
+36	1802	7640078642965268	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2cfa7ebcde1ed76e
+13	1861	7640078643411714	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	8c53efd3c685b711
+26	2028	7640078645199127	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1a714a54ce6f87a3
+8	2141	7640078646325891	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a7c47b483556cc80
+2142	2273	7640078647752552	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4t0x2e5y/obj/arm64-v8a/libgame.so	cec3ae18b291e7f
