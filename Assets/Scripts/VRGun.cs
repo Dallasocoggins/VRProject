@@ -48,14 +48,15 @@ public class VRGun : MonoBehaviour
 
     void FireGun(ActivateEventArgs args)
     {
-        if (projectilePrefab)
+        if (projectilePrefab != null && currentInteractor != null) // Fix condition
         {
             GameObject bullet = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
             if (rb)
             {
-                rb.linearVelocity = muzzle.forward * projectileSpeed;
+                rb.useGravity = false;
+                rb.linearVelocity = muzzle.forward * projectileSpeed; // Fix velocity
             }
         }
     }
