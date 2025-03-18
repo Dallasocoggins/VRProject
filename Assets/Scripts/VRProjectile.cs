@@ -14,6 +14,11 @@ public class VRProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Shield"))
+        {
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        }
+
         // Apply force if hitting a physics object
         Rigidbody rb = collision.rigidbody;
         if (rb != null)
@@ -36,6 +41,10 @@ public class VRProjectile : MonoBehaviour
         }
 
         Destroy(gameObject); // Destroy bullet on impact
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
     }
 
     void RestartLevel()

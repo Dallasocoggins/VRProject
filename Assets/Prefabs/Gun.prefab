@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 5539272223556925681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.554}
+  m_LocalPosition: {x: 0, y: 0, z: 1.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -469,9 +469,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 5806963731394943143}
-  projectilePrefab: {fileID: 3761568956174310165, guid: cb4eafbaa97fe8e478ea2b8b3b9ca9ed, type: 3}
-  projectileSpeed: 20
+  range: 50
+  damage: 10
   laserLine: {fileID: 2315590169048189800}
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  defaultLaserColor: {r: 1, g: 0, b: 0, a: 1}
+  fireLaserColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!120 &2315590169048189800
 LineRenderer:
   serializedVersion: 2

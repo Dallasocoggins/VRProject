@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6606446550948041446}
   - component: {fileID: 3016407421939548502}
   - component: {fileID: 827730490537459093}
+  - component: {fileID: 87546626974169407}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -184,6 +185,23 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &87546626974169407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560209996704260157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bbdaaa24583c2648a722a6686564703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repelForce: 50
+  repelledLayers:
+    serializedVersion: 2
+    m_Bits: 2147483703
+  repelRadius: 0.6
 --- !u!1 &4425294186254780796
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,8 +230,8 @@ Transform:
   m_GameObject: {fileID: 4425294186254780796}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7259694, y: 0.32244325, z: 0.415}
-  m_LocalScale: {x: 0.3, y: 0.6, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6606446550948041446}
@@ -320,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 5666666797255241105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7259694, y: 0.32244325, z: 0.368}
+  m_LocalPosition: {x: 0, y: 0, z: -0.05}
   m_LocalScale: {x: 0.05, y: 0.2, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []

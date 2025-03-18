@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8007851442401339440}
   - component: {fileID: 4253647922809330870}
   - component: {fileID: 6113179684554327869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   shootInterval: 2
   projectileSpeed: 15
   fireSpreadRadius: 0.2
+  flashDuration: 0.2
 --- !u!54 &4253647922809330870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6352062282185170407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

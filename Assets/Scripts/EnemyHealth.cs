@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public float health = 100f;
     public GameObject projectilePrefab;
@@ -8,6 +8,10 @@ public class EnemyHealth : MonoBehaviour
     public float shootInterval = 2f;
     public float projectileSpeed = 15f;
     public float fireSpreadRadius = 0.2f; // Adjust this to increase randomness
+    public float flashDuration = 0.2f; // Duration of the flash effect
+    private Color originalColor;
+    private Renderer enemyRenderer;
+    private bool isFlashing = false;
 
     private Transform playerHead;
     private float shootTimer;
@@ -18,6 +22,13 @@ public class EnemyHealth : MonoBehaviour
         if (xrHead != null)
         {
             playerHead = xrHead.transform;
+        }
+
+        // Get the Renderer component to change the material color
+        enemyRenderer = GetComponent<Renderer>();
+        if (enemyRenderer != null)
+        {
+            originalColor = enemyRenderer.material.color; // Store the original color
         }
     }
 
@@ -39,10 +50,33 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+
+        // Flash the color to red
+        if (!isFlashing && enemyRenderer != null)
+        {
+            StartCoroutine(FlashRed());
+        }
+
         if (health <= 0)
         {
             Die();
         }
+    }
+
+    System.Collections.IEnumerator FlashRed()
+    {
+        isFlashing = true;
+
+        // Change color to red
+        enemyRenderer.material.color = Color.red;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(flashDuration);
+
+        // Revert to the original color
+        enemyRenderer.material.color = originalColor;
+
+        isFlashing = false;
     }
 
     void Die()

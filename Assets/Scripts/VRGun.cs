@@ -5,38 +5,41 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class VRGun : MonoBehaviour
 {
-    public Transform muzzle; // Where bullets spawn
-    public GameObject projectilePrefab; // Bullet prefab
-    public float projectileSpeed = 20f;
+    public Transform muzzle; // Where bullets are fired from
+    public float range = 50f; // Max raycast distance
+    public float damage = 50f;
     public LineRenderer laserLine; // Laser sight
-
+    public LayerMask hitLayers; // Layers that can be hit
+    public Color defaultLaserColor = Color.red;
+    public Color fireLaserColor = Color.yellow;
     private XRGrabInteractable grabInteractable;
-    private IXRSelectInteractor currentInteractor; // Stores the current interactor
+    private IXRSelectInteractor currentInteractor;
+    private bool isFiring = false;
 
     void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
-        grabInteractable.activated.AddListener(FireGun); // Listen for trigger press
+        grabInteractable.activated.AddListener(FireGun);
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
 
-        // Setup Laser Pointer
         if (laserLine)
         {
             laserLine.positionCount = 2;
-            laserLine.enabled = true; // Always on
+            laserLine.enabled = true;
+            laserLine.startColor = defaultLaserColor;
+            laserLine.endColor = defaultLaserColor;
         }
     }
 
     void Update()
     {
-        // Always show laser pointer
         if (laserLine)
         {
-            Vector3 endPoint = muzzle.position + muzzle.forward * 50f;
+            Vector3 endPoint = muzzle.position + muzzle.forward * range;
             RaycastHit hit;
 
-            if (Physics.Raycast(muzzle.position, muzzle.forward, out hit, 50f))
+            if (Physics.Raycast(muzzle.position, muzzle.forward, out hit, range, hitLayers))
             {
                 endPoint = hit.point;
             }
@@ -48,26 +51,59 @@ public class VRGun : MonoBehaviour
 
     void FireGun(ActivateEventArgs args)
     {
-        if (projectilePrefab != null && currentInteractor != null) // Fix condition
+        if (currentInteractor != null)
         {
-            GameObject bullet = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            isFiring = true;
+            ChangeLaserColor(fireLaserColor);
 
-            if (rb)
+            RaycastHit hit;
+            if (Physics.Raycast(muzzle.position, muzzle.forward, out hit, range, hitLayers))
             {
-                rb.useGravity = false;
-                rb.linearVelocity = muzzle.forward * projectileSpeed; // Fix velocity
+                IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.TakeDamage(damage);
+                }
+            }
+
+            Invoke("ResetLaserColor", 0.1f); // Briefly change color
+        }
+    }
+
+    void ChangeLaserColor(Color color)
+    {
+        if (laserLine)
+        {
+            laserLine.startColor = color;
+            laserLine.endColor = color;
+
+            if (laserLine.material != null)
+            {
+                laserLine.material.SetColor("_Color", color); // Ensure material color changes
+                laserLine.material.SetColor("_EmissionColor", color); // Helps if using emissive shaders
             }
         }
     }
 
+
+    void ResetLaserColor()
+    {
+        isFiring = false;
+        ChangeLaserColor(defaultLaserColor);
+    }
+
     void OnGrab(SelectEnterEventArgs args)
     {
-        currentInteractor = args.interactorObject; // Store the interactor when grabbing the gun
+        currentInteractor = args.interactorObject;
     }
 
     void OnRelease(SelectExitEventArgs args)
     {
-        currentInteractor = null; // Clear the interactor when released
+        currentInteractor = null;
     }
+}
+
+public interface IDamageable
+{
+    void TakeDamage(float amount);
 }
