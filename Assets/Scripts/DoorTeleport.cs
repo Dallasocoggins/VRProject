@@ -5,7 +5,7 @@ using Scene = UnityEngine.SceneManagement.Scene;
 public class DoorTeleport : MonoBehaviour
 {
     [SerializeField]
-    int sceneToLoadIndex;
+    string name;
 
     [SerializeField]
     Transform tpPoint;
@@ -28,7 +28,7 @@ public class DoorTeleport : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            sceneManage.GoToScene(sceneToLoadIndex, this);
+            sceneManage.GoToScene(name, this);
         }
     }
 }

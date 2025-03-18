@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8190686302742468827}
   - component: {fileID: 8007851442401339440}
   - component: {fileID: 4253647922809330870}
+  - component: {fileID: 6113179684554327869}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -130,6 +131,7 @@ MonoBehaviour:
   firePoint: {fileID: 6352062282185170407}
   shootInterval: 2
   projectileSpeed: 15
+  fireSpreadRadius: 0.2
 --- !u!54 &4253647922809330870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,6 +159,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6113179684554327869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779151448615896512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd05e8ee03774aa47ab3c1516dd068ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4253647922809330870}
+  waypoints: []
+  speed: 5
 --- !u!1 &6057665702391155893
 GameObject:
   m_ObjectHideFlags: 0

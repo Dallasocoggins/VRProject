@@ -7,13 +7,14 @@ public class EnemyHealth : MonoBehaviour
     public Transform firePoint; // Where bullets spawn
     public float shootInterval = 2f;
     public float projectileSpeed = 15f;
+    public float fireSpreadRadius = 0.2f; // Adjust this to increase randomness
 
-    private Transform playerHead; // Player's headset transform
+    private Transform playerHead;
     private float shootTimer;
 
     void Start()
     {
-        GameObject xrHead = GameObject.FindGameObjectWithTag("MainCamera"); // Find the VR headset
+        GameObject xrHead = GameObject.FindGameObjectWithTag("MainCamera");
         if (xrHead != null)
         {
             playerHead = xrHead.transform;
@@ -24,10 +25,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (playerHead != null)
         {
-            // Aim directly at the player's head
             transform.LookAt(playerHead);
 
-            // Shoot at intervals
             shootTimer += Time.deltaTime;
             if (shootTimer >= shootInterval)
             {
@@ -56,11 +55,25 @@ public class EnemyHealth : MonoBehaviour
     {
         if (projectilePrefab && firePoint)
         {
-            GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            // Generate a random offset for the bullet spawn position
+            Vector3 randomOffset = new Vector3(
+                Random.Range(-fireSpreadRadius, fireSpreadRadius),
+                Random.Range(-fireSpreadRadius, fireSpreadRadius),
+                Random.Range(-fireSpreadRadius, fireSpreadRadius) * 0.5f // Reduce spread depth
+            );
+
+            // Calculate the new randomized spawn position
+            Vector3 randomFirePoint = firePoint.position + firePoint.right * randomOffset.x +
+                                      firePoint.up * randomOffset.y +
+                                      firePoint.forward * randomOffset.z;
+
+            // Instantiate the bullet at the randomized fire position
+            GameObject bullet = Instantiate(projectilePrefab, randomFirePoint, firePoint.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
             if (rb)
             {
-                rb.linearVelocity = (playerHead.position - firePoint.position).normalized * projectileSpeed; // Fire towards the headset
+                rb.linearVelocity = (playerHead.position - randomFirePoint).normalized * projectileSpeed;
             }
         }
     }

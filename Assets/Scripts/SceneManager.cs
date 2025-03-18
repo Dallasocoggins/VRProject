@@ -15,8 +15,8 @@ public class SceneManage: MonoBehaviour
         
     }
 
-    public void GoToScene(int sceneToLoadIndex, DoorTeleport door)
+    public void GoToScene(string name, DoorTeleport door)
     {
-        SceneManager.LoadScene(sceneToLoadIndex);
+        SceneManager.LoadScene(name);
     }
 }

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   damage: 50
-  impactForce: 50
+  impactForce: 5
 --- !u!54 &9077777842623140744
 Rigidbody:
   m_ObjectHideFlags: 0
