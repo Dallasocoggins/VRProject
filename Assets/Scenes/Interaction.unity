@@ -632,6 +632,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed33d63d06c72d34ab9e59e41e182623, type: 3}
+--- !u!114 &305052638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1312735185179553605, guid: ed33d63d06c72d34ab9e59e41e182623, type: 3}
+  m_PrefabInstance: {fileID: 305052637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2b80d12f1680248a74fa47c4a7692f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323182119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1118,38 @@ PrefabInstance:
       propertyPath: m_AllowGazeInteraction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 305052638}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayHapticFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CustomHapticScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 827730490537459093, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6606446550948041446, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1166,13 +1209,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 560209996704260157, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 616898371}
   m_SourcePrefab: {fileID: 100100000, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
 --- !u!4 &616898369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6606446550948041446, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
   m_PrefabInstance: {fileID: 616898368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &616898370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560209996704260157, guid: 61fcc0f4258f8044bb009d2122288e7f, type: 3}
+  m_PrefabInstance: {fileID: 616898368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616898371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616898370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547c9530709657b40b1fa92a818ee40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hapticType: 1
+  amplitude: 0.2
+  duration: 0.1
 --- !u!1001 &654618360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3799,6 +3865,38 @@ PrefabInstance:
     - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
       propertyPath: m_AllowGazeInteraction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 305052638}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayHapticFeedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CustomHapticScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312496943993487455, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8810434730152831781, guid: d40efb0932f459b4faba297fab9caeb6, type: 3}
       propertyPath: m_Name

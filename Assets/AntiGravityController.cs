@@ -20,10 +20,12 @@ public class AntiGravityController : MonoBehaviour
     private float flyingTimer = 0f; // Timer to track flying duration
     private Vector3 velocity; // Current flying velocity
     private float continueTimer = 0f; // Timer to track time after release
+    private CustomHapticScript chs;
 
     void Start()
     {
         moveProvider = GetComponentInChildren<ContinuousMoveProvider>(); // Get the ContinuousMoveProvider component
+        chs = FindFirstObjectByType<CustomHapticScript>();
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class AntiGravityController : MonoBehaviour
         {
             // Update the flying timer
             flyingTimer += Time.deltaTime;
+            chs.PlayHapticFeedback(0.1f);
 
             // If we are still flying after releasing the forward button, apply momentum decay
             if (continueTimer > 0)
