@@ -176,6 +176,10 @@ PrefabInstance:
       value: Navigation
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
+      propertyPath: SceneName
+      value: Navigation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
       propertyPath: sceneToLoadIndex
       value: 4
       objectReference: {fileID: 0}
@@ -274,6 +278,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
       propertyPath: name
+      value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
+      propertyPath: SceneName
       value: Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
@@ -620,6 +628,10 @@ PrefabInstance:
       value: Passthrough
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
+      propertyPath: SceneName
+      value: Passthrough
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
       propertyPath: sceneToLoadIndex
       value: 1
       objectReference: {fileID: 0}
@@ -765,6 +777,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
       propertyPath: name
+      value: Haptics
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
+      propertyPath: SceneName
       value: Haptics
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}

@@ -7,7 +7,7 @@ public class VRShield : MonoBehaviour
 {
     public float repelForce = 100f;
     public LayerMask repelledLayers;
-    public float repelRadius = 0.5f; // Radius for overlap check
+    public float repelRadius = 1.5f; // Radius for overlap check
     private XRGrabInteractable grabInteractable;
     private IXRSelectInteractor currentInteractor;
     private bool isRepelling = false;

@@ -1377,6 +1377,10 @@ PrefabInstance:
       value: Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
+      propertyPath: SceneName
+      value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057630855179325254, guid: 82feb4b762fb0b0448d5f0ff802c5e09, type: 3}
       propertyPath: sceneToLoadIndex
       value: 1
       objectReference: {fileID: 0}
