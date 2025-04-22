@@ -147,19 +147,29 @@ public class PassThroughControl : MonoBehaviour
 
             foreach (Material mat in renderer.materials)
             {
-                Color c = mat.color;
-                c.a = alpha;
-                mat.color = c;
+                // Ensure the shader is the Standard Shader
+                if (mat.shader.name != "Standard")
+                {
+                    mat.shader = Shader.Find("Standard");
+                }
 
-                mat.SetFloat("_Mode", 2); // Transparent mode
+                // Force to Transparent rendering mode
+                mat.SetFloat("_Mode", 3f); // 0=Opaque, 1=Cutout, 2=Fade, 3=Transparent
+                mat.SetOverrideTag("RenderType", "Transparent");
                 mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
                 mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
                 mat.SetInt("_ZWrite", 0);
                 mat.DisableKeyword("_ALPHATEST_ON");
-                mat.EnableKeyword("_ALPHABLEND_ON");
-                mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                mat.DisableKeyword("_ALPHABLEND_ON");
+                mat.EnableKeyword("_ALPHAPREMULTIPLY_ON");
                 mat.renderQueue = 3000;
+
+                // Set transparency
+                Color color = mat.color;
+                color.a = alpha;
+                mat.color = color;
             }
         }
     }
+
 }
