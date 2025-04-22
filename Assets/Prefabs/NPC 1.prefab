@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4839442339442114506}
   - component: {fileID: 3216367011364946400}
   - component: {fileID: 8190686302742468827}
-  - component: {fileID: 8007851442401339440}
   - component: {fileID: 4253647922809330870}
   - component: {fileID: 3404934579234182013}
   - component: {fileID: 5998140656836139655}
@@ -115,25 +114,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8007851442401339440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779151448615896512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf492b6238319694dbf2b82b8ad7df0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  projectilePrefab: {fileID: 3761568956174310165, guid: cb4eafbaa97fe8e478ea2b8b3b9ca9ed, type: 3}
-  firePoint: {fileID: 6352062282185170407}
-  shootInterval: 2
-  projectileSpeed: 15
-  fireSpreadRadius: 0.2
-  flashDuration: 0.2
 --- !u!54 &4253647922809330870
 Rigidbody:
   m_ObjectHideFlags: 0

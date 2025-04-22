@@ -11,6 +11,8 @@ TagManager:
   - Goal
   - route
   - Wall
+  - Enemy
+  - OuterWall
   layers:
   - Default
   - TransparentFX
