@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4731223074745137731}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d87e6eb039b3a4d90bdda838a574f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadIndex: 0
+  SceneName: 
   tpPoint: {fileID: 3398714196192624325}
 --- !u!65 &4731223074745137731
 BoxCollider:
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 8953413353119157569}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 2.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165,7 +165,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f83a5b51278c01419bc8cf986883797, type: 2}
+  - {fileID: 2100000, guid: 594133eb2ebadb147bc17228342648bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

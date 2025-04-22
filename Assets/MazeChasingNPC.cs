@@ -11,16 +11,22 @@ public class MazeChasingNPC : MonoBehaviour
     public float killDistance = 1.2f;
     public float killTimeThreshold = 2f;
 
+    public Animator animator;
+
     private NavMeshAgent agent;
     private float timeNearPlayer = 0f;
     private bool isFrozen = false;
     private float acceleration = 0f;
+
+    private Rigidbody rb;
     
     private Vector3 frozenPosition;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         acceleration = agent.acceleration;
+        rb = GetComponent<Rigidbody>();
+        animator.SetBool(0, isFrozen);
     }
 
     void Update()
@@ -29,6 +35,7 @@ public class MazeChasingNPC : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, player.position);
         agent.SetDestination(player.position);
+
 
         if (!isFrozen)
         {
@@ -65,6 +72,7 @@ public class MazeChasingNPC : MonoBehaviour
     public void SetFrozen(bool freeze)
     {
         isFrozen = freeze;
+        animator.SetBool(0, true);
         if (isFrozen)
         {
             frozenPosition = transform.position;
