@@ -2,11 +2,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
+using static System.Net.Mime.MediaTypeNames;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
     public int healthMax = 10;
     public Image hpBar;
+    public Image countdownBackground;
+    public TextMeshProUGUI countdown;
+    public Canvas canvas;
 
     private int health;
     private Color originalColor;
@@ -20,6 +26,10 @@ public class Player : MonoBehaviour
             originalColor = hpBar.color;
             UpdateHealthBar();
         }
+        countdown.enabled = false;
+        countdownBackground.enabled = false;
+        canvas = countdownBackground.GetComponentInParent<Canvas>();
+        canvas.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,6 +86,28 @@ public class Player : MonoBehaviour
         {
             RestartLevel();
         }
+    }
+
+    public void EnableCountdown(int number)
+    {
+        canvas.enabled = true;
+        countdownBackground.enabled = true;
+        countdown.enabled = true;
+        StartCoroutine(SetCountDown(number));
+    }
+
+    IEnumerator SetCountDown(int number)
+    {
+        int i = number;
+        while (i > 0)
+        {
+            countdown.text = "" + i;
+            yield return new WaitForSeconds(1.0f);
+            i--;
+        }
+        canvas.enabled = false;
+        countdown.enabled = false;
+        countdownBackground.enabled = false;
     }
 
 }

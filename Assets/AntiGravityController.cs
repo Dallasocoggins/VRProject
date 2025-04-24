@@ -21,11 +21,13 @@ public class AntiGravityController : MonoBehaviour
     private Vector3 velocity; // Current flying velocity
     private float continueTimer = 0f; // Timer to track time after release
     private CustomHapticScript chs;
+    private Player player;
 
     void Start()
     {
         moveProvider = GetComponentInChildren<ContinuousMoveProvider>(); // Get the ContinuousMoveProvider component
         chs = FindFirstObjectByType<CustomHapticScript>();
+        player = GameObject.FindFirstObjectByType<Player>();
     }
 
     void Update()
@@ -72,6 +74,7 @@ public class AntiGravityController : MonoBehaviour
         moveProvider.enableFly = true; // Enable the ContinuousMoveProvider
 
         Debug.Log($"Floating started! Flying speed: {velocity.y}");
+        player.EnableCountdown((int)flyingDuration);
     }
 
     void StopFloating()

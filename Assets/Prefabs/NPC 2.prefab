@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   exit: {fileID: 0}
-  switchDistance: 1.2
+  switchDistance: 2
   delay: 5
   dialogue: Follow me to the exit!
   dialogueTextMeshPro: {fileID: 3070595614287118965}

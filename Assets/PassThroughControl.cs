@@ -14,6 +14,8 @@ public class PassThroughControl : MonoBehaviour
     public float cooldown = 3f;
     public Image canUse;
 
+    private Player player;
+
     private bool canPassthrough = true;
 
     public OVRPassthroughLayer ovrlayer;
@@ -39,6 +41,7 @@ public class PassThroughControl : MonoBehaviour
         Grounds = GameObject.FindGameObjectsWithTag("Ground");
         Enemy = FindFirstObjectByType<MazeChasingNPC>();
         Friendly = FindFirstObjectByType<FriendlyChasingNPC>();
+        player = FindFirstObjectByType<Player>();
 
         // Save default passthrough values
         defaultBrightness = ovrlayer.colorMapEditorBrightness;
@@ -56,6 +59,7 @@ public class PassThroughControl : MonoBehaviour
 
     private IEnumerator DisableWallsTimer()
     {
+        player.EnableCountdown((int)timeForPassthrough);
         canPassthrough = false;
         canUse.color = new Color(255, 0, 0);
 

@@ -11,6 +11,7 @@ public class Scrambler : MonoBehaviour
             // Try to find the AntiGravityController on the player
             AntiGravityController antiGravityController = other.GetComponent<AntiGravityController>();
 
+
             if (antiGravityController != null)
             {
                 // Call the StartFloating method on the AntiGravityController

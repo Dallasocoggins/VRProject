@@ -30,7 +30,7 @@ public class FriendlyChasingNPC : MonoBehaviour
         }
         if (exit == null)
         {
-            exit = GameObject.FindAnyObjectByType<DoorTeleport>().transform;
+            exit = GameObject.FindFirstObjectByType<DoorTeleport>().transform;
         }
         if (dialogueTextMeshPro != null)
         {
@@ -41,8 +41,21 @@ public class FriendlyChasingNPC : MonoBehaviour
 
     void Update()
     {
+        float distance = Mathf.Abs(Vector3.Distance(transform.position, player.position));
+        if (waitingForPlayerConfirmation && distance > switchDistance)
+        {
+            currentTarget = player;
+            isExiting = false;
+            hasArrivedAtPlayer = false;
+            isWaiting = false;
+            dialogueTextMeshPro.text = dialogue;
+            dialogueCanvas.enabled = true;
+            waitingForPlayerConfirmation = false;
+        }
+
         if (player == null || exit == null || isWaiting || waitingForPlayerConfirmation || isFrozen) return;
-        float distance = Vector3.Distance(transform.position, currentTarget.position);
+
+        distance = Mathf.Abs(Vector3.Distance(transform.position, currentTarget.position));
         // Reached target
         if (distance <= switchDistance)
         {
@@ -55,7 +68,7 @@ public class FriendlyChasingNPC : MonoBehaviour
 
                 if (dialogueTextMeshPro != null && dialogueCanvas != null)
                 {
-                    dialogueTextMeshPro.text = "Come on! Follow me to the exit!";
+                    dialogueTextMeshPro.text = dialogue;
                     dialogueCanvas.enabled = true;
                 }
                 return;
