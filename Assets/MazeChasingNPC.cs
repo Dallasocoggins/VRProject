@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 public class MazeChasingNPC : MonoBehaviour
 {
@@ -12,6 +11,8 @@ public class MazeChasingNPC : MonoBehaviour
     public float closeRange = 0f;
     public float killDistance = 1.2f;
     public float killTimeThreshold = 2f;
+    public float startDelay = 3.0f;
+    public int damageAmount = 1;
 
     private NavMeshAgent agent;
     private float timeNearPlayer = 0f;
@@ -20,11 +21,16 @@ public class MazeChasingNPC : MonoBehaviour
     private Vector3 frozenPosition;
     private Rigidbody rb;
 
+    private float delayTimer = 0f;
+    private bool hasStarted = false;
+    private bool hasDealtDamage = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         acceleration = agent.acceleration;
         rb = GetComponent<Rigidbody>();
+        delayTimer = startDelay;
 
         if (animator)
         {
@@ -34,6 +40,19 @@ public class MazeChasingNPC : MonoBehaviour
 
     void Update()
     {
+        if (!hasStarted)
+        {
+            delayTimer -= Time.deltaTime;
+            if (delayTimer <= 0f)
+            {
+                hasStarted = true;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         if (player == null) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
@@ -52,21 +71,27 @@ public class MazeChasingNPC : MonoBehaviour
         if (distance <= killDistance)
         {
             timeNearPlayer += Time.deltaTime;
-            if (timeNearPlayer >= killTimeThreshold)
+
+            if (timeNearPlayer >= killTimeThreshold && !hasDealtDamage)
             {
-                KillPlayer();
+                DamagePlayer();
+                hasDealtDamage = true;
             }
         }
         else
         {
             timeNearPlayer = 0f;
+            hasDealtDamage = false;
         }
     }
 
-    private void KillPlayer()
+    private void DamagePlayer()
     {
-        Debug.Log("Player caught!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Player playerScript = player.GetComponent<Player>();
+        if (playerScript != null)
+        {
+            playerScript.TakeDamage(damageAmount);
+        }
     }
 
     public void SetFrozen(bool freeze)

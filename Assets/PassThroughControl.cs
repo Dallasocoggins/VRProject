@@ -30,12 +30,15 @@ public class PassThroughControl : MonoBehaviour
     private float defaultContrast;
     private float defaultSaturation;
 
+    private FriendlyChasingNPC Friendly;
+
     void Start()
     {
         Walls = GameObject.FindGameObjectsWithTag("Wall");
         OuterWalls = GameObject.FindGameObjectsWithTag("OuterWall");
         Grounds = GameObject.FindGameObjectsWithTag("Ground");
         Enemy = FindFirstObjectByType<MazeChasingNPC>();
+        Friendly = FindFirstObjectByType<FriendlyChasingNPC>();
 
         // Save default passthrough values
         defaultBrightness = ovrlayer.colorMapEditorBrightness;
@@ -71,6 +74,7 @@ public class PassThroughControl : MonoBehaviour
         SetGroundTransparency(0.3f);
 
         Enemy.SetFrozen(true);
+        Friendly.SetFrozen(true);
 
         // Wait before starting flash
         float waitTimeBeforeFlashing = timeForPassthrough - flashDuration;
