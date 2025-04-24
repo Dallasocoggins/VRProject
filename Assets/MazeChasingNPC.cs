@@ -5,28 +5,31 @@ using UnityEngine.SceneManagement;
 public class MazeChasingNPC : MonoBehaviour
 {
     public Transform player;
+    public Animator animator;
+
     public float chaseSpeed = 3.5f;
     public float slowSpeed = 1.5f;
     public float closeRange = 0f;
     public float killDistance = 1.2f;
     public float killTimeThreshold = 2f;
 
-    public Animator animator;
-
     private NavMeshAgent agent;
     private float timeNearPlayer = 0f;
     private bool isFrozen = false;
     private float acceleration = 0f;
-
-    private Rigidbody rb;
-    
     private Vector3 frozenPosition;
+    private Rigidbody rb;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         acceleration = agent.acceleration;
         rb = GetComponent<Rigidbody>();
-        animator.SetBool(0, isFrozen);
+
+        if (animator)
+        {
+            animator.SetBool(0, isFrozen);
+        }
     }
 
     void Update()
@@ -36,21 +39,19 @@ public class MazeChasingNPC : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         agent.SetDestination(player.position);
 
-
         if (!isFrozen)
         {
             agent.speed = distance <= closeRange ? slowSpeed : chaseSpeed;
             agent.acceleration = acceleration;
-        } else
+        }
+        else
         {
             transform.position = frozenPosition;
         }
 
-        // Check if within kill range
         if (distance <= killDistance)
         {
             timeNearPlayer += Time.deltaTime;
-
             if (timeNearPlayer >= killTimeThreshold)
             {
                 KillPlayer();
@@ -58,13 +59,12 @@ public class MazeChasingNPC : MonoBehaviour
         }
         else
         {
-            timeNearPlayer = 0f; // Reset timer if player escapes
+            timeNearPlayer = 0f;
         }
     }
 
-    void KillPlayer()
+    private void KillPlayer()
     {
-        // You can add animations or effects here
         Debug.Log("Player caught!");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -72,7 +72,10 @@ public class MazeChasingNPC : MonoBehaviour
     public void SetFrozen(bool freeze)
     {
         isFrozen = freeze;
-        animator.SetBool(0, true);
+        if (animator)
+        {
+            animator.SetBool(0, isFrozen);
+        }
         if (isFrozen)
         {
             frozenPosition = transform.position;

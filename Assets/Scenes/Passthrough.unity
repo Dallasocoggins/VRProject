@@ -6609,7 +6609,7 @@ PrefabInstance:
     - target: {fileID: 8023451863100658667, guid: 834b9effd917fe04baed8c57ba00fd33, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: 8bedd09a51d48c64eb02152abc593101, type: 2}
     - target: {fileID: 8023451863100658667, guid: 834b9effd917fe04baed8c57ba00fd33, type: 3}
       propertyPath: m_UseGeometry
       value: 0
@@ -6636,7 +6636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859086585419718531, guid: 834b9effd917fe04baed8c57ba00fd33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.9
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 8859086585419718531, guid: 834b9effd917fe04baed8c57ba00fd33, type: 3}
       propertyPath: m_LocalPosition.z
