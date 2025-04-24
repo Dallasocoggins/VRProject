@@ -27,12 +27,6 @@ public class VRProjectile : MonoBehaviour
             rb.AddForce(forceDirection * impactForce, ForceMode.Impulse);
         }
 
-        // Check if hitting the player
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            RestartLevel();
-        }
-
         // Check if hitting an enemy
         EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemy != null)

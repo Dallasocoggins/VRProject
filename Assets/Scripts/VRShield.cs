@@ -44,6 +44,16 @@ public class VRShield : MonoBehaviour
         isRepelling = true;
     }
 
+    public void TriggerPressed()
+    {
+        isRepelling = true;
+    }
+
+    public void TriggerRelease()
+    {
+        isRepelling = false;
+    }
+
     void TriggerReleased(DeactivateEventArgs args)
     {
         isRepelling = false;

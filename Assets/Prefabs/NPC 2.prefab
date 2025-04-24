@@ -131,8 +131,8 @@ MonoBehaviour:
   player: {fileID: 0}
   exit: {fileID: 0}
   switchDistance: 1.2
-  delay: 10
-  dialogue: 
+  delay: 5
+  dialogue: Follow me to the exit!
   dialogueTextMeshPro: {fileID: 3070595614287118965}
 --- !u!1 &3341654410719818678
 GameObject:

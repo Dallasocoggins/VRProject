@@ -1,23 +1,23 @@
 # ninja log v5
-0	3258	7653934381909532	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3dcdaeee937115fd
-115	910	7653934357960998	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f2b63ca1035a7c4
-103	2587	7653934375071116	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	317573790d29e0c7
-931	1678	7653934365308001	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libswappywrapper.so	9a5d1e37a07a68cc
-83	2830	7653934377408216	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4d0617ede2514054
-26	2621	7653934375475185	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	36050e2b75b69a57
-47	2847	7653934377695531	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f788da8faa80e490
-92	2639	7653934375419939	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	74c70c93514507ae
-56	2664	7653934375877741	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	23c409db4c5f6599
-73	3140	7653934380723642	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f75a9f061a96d174
-3258	3444	7653934383797777	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libgame.so	edf433dfbbb00d96
-42	338	7671767837191161	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f2b63ca1035a7c4
-338	679	7671767840646152	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libswappywrapper.so	9a5d1e37a07a68cc
-33	1081	7671767844577879	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	317573790d29e0c7
-17	1097	7671767844763931	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	36050e2b75b69a57
-24	1136	7671767845136792	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	74c70c93514507ae
-8	1191	7671767845651486	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	23c409db4c5f6599
-37	1200	7671767845752221	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4d0617ede2514054
-13	1254	7671767846315880	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f788da8faa80e490
-29	1429	7671767848054243	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f75a9f061a96d174
-20	1557	7671767849299629	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3dcdaeee937115fd
-1557	1697	7671767850767385	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libgame.so	edf433dfbbb00d96
+23	1133	7671781138369176	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3dcdaeee937115fd
+45	292	7671781129956678	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f2b63ca1035a7c4
+35	804	7671781135076340	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	317573790d29e0c7
+292	527	7671781132366440	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libswappywrapper.so	9a5d1e37a07a68cc
+40	895	7671781135983684	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4d0617ede2514054
+12	832	7671781135335019	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	36050e2b75b69a57
+17	941	7671781136431313	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f788da8faa80e490
+28	833	7671781135365215	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	74c70c93514507ae
+7	867	7671781135706337	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	23c409db4c5f6599
+32	1056	7671781137566243	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f75a9f061a96d174
+1133	1245	7671781139544012	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libgame.so	edf433dfbbb00d96
+54	223	7671784009532929	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f2b63ca1035a7c4
+224	421	7671784011590752	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libswappywrapper.so	9a5d1e37a07a68cc
+33	708	7671784014407976	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	317573790d29e0c7
+19	715	7671784014481183	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	23c409db4c5f6599
+14	731	7671784014630423	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	36050e2b75b69a57
+38	740	7671784014740117	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	74c70c93514507ae
+48	813	7671784015475631	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4d0617ede2514054
+8	826	7671784015611282	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f788da8faa80e490
+43	970	7671784017050746	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f75a9f061a96d174
+24	1071	7671784018037657	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3dcdaeee937115fd
+1072	1182	7671784019206974	C:/Users/doc07/Mazes of Peril/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4p561o5a/obj/arm64-v8a/libgame.so	edf433dfbbb00d96
